@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaEdit } from 'react-icons/fa'; // Importing an edit icon from react-icons
 import axios from 'axios'; // Axios for the API call
 
@@ -12,7 +12,14 @@ const UserCard = ({ user }) => {
     setNewMessage(e.target.value);
   };
 
-  // Handle the click on the edit icon
+
+  // useEffect(
+  //   () => {
+  //     console.log('HEYA');
+      
+  //   } , [newMessage]
+  // )
+ 
   const handleEdit = () => {
     setIsEditing(true); // Switch to edit mode
     setNewMessage(''); // Clear the message box when editing
@@ -97,7 +104,7 @@ const UserCard = ({ user }) => {
             />
           ) : (
             <span className="text-gray-700">
-              <span className="font-medium">Message:</span> {user.message || 'No message provided'}
+              <span className="font-medium">Message:</span> {newMessage || 'No message provided'}
             </span>
           )}
           <div className="flex space-x-2">

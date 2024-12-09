@@ -49,6 +49,8 @@ const Traffic = () => {
       {users.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {users.map((user) => (
+            console.log('User Data',user),
+            
             <UserCard key={user._id} user={user} /> // Use the UserCard component
           ))}
         </div>
